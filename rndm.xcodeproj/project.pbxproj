@@ -13,8 +13,9 @@
 		F63580BE223753E700CF0B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63580BC223753E700CF0B04 /* Main.storyboard */; };
 		F63580C0223753E900CF0B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63580BF223753E900CF0B04 /* Assets.xcassets */; };
 		F63580C3223753E900CF0B04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63580C1223753E900CF0B04 /* LaunchScreen.storyboard */; };
-		F63580CB2237557500CF0B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F63580CA2237557400CF0B04 /* GoogleService-Info.plist */; };
 		F63580CD22375E8900CF0B04 /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63580CC22375E8900CF0B04 /* AddThoughtVC.swift */; };
+		F63580D222389AAD00CF0B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F63580D122389AAD00CF0B04 /* GoogleService-Info.plist */; };
+		F63580D52238ADBC00CF0B04 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63580D42238ADBC00CF0B04 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		F63580BF223753E900CF0B04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F63580C2223753E900CF0B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F63580C4223753E900CF0B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F63580CA2237557400CF0B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F63580CC22375E8900CF0B04 /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
+		F63580D122389AAD00CF0B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F63580D42238ADBC00CF0B04 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		F63580B7223753E700CF0B04 /* rndm */ = {
 			isa = PBXGroup;
 			children = (
+				F63580D32238ADB000CF0B04 /* Utilities */,
 				F63580D022375EA400CF0B04 /* Model */,
 				F63580CF22375E9E00CF0B04 /* View */,
 				F63580CE22375E9400CF0B04 /* Controller */,
@@ -90,7 +93,7 @@
 				F63580BF223753E900CF0B04 /* Assets.xcassets */,
 				F63580C1223753E900CF0B04 /* LaunchScreen.storyboard */,
 				F63580C4223753E900CF0B04 /* Info.plist */,
-				F63580CA2237557400CF0B04 /* GoogleService-Info.plist */,
+				F63580D122389AAD00CF0B04 /* GoogleService-Info.plist */,
 			);
 			path = rndm;
 			sourceTree = "<group>";
@@ -116,6 +119,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F63580D32238ADB000CF0B04 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F63580D42238ADBC00CF0B04 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F63580C3223753E900CF0B04 /* LaunchScreen.storyboard in Resources */,
-				F63580CB2237557500CF0B04 /* GoogleService-Info.plist in Resources */,
+				F63580D222389AAD00CF0B04 /* GoogleService-Info.plist in Resources */,
 				F63580C0223753E900CF0B04 /* Assets.xcassets in Resources */,
 				F63580BE223753E700CF0B04 /* Main.storyboard in Resources */,
 			);
@@ -195,25 +206,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rndm/Pods-rndm-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -250,6 +257,7 @@
 				F63580CD22375E8900CF0B04 /* AddThoughtVC.swift in Sources */,
 				F63580BB223753E700CF0B04 /* MainVC.swift in Sources */,
 				F63580B9223753E700CF0B04 /* AppDelegate.swift in Sources */,
+				F63580D52238ADBC00CF0B04 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
