@@ -27,6 +27,11 @@ class ThoughtCell: UITableViewCell {
         self.usernameLbl.text = thought.username
         self.thoughtTxtLbl.text = thought.thoughTxt
         self.likesNumLbl.text = String(thought.numLikes)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, hh:mm"
+        let timeStamp = formatter.string(from: thought.timestamp)
+        self.timestampLbl.text = timeStamp
     }
 
 }
