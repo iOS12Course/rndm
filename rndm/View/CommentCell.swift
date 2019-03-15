@@ -10,15 +10,14 @@ import UIKit
 
 class CommentCell: UITableViewCell {
 
+    //Outlets
+    @IBOutlet weak var usernameTxt: UILabel!
+    @IBOutlet weak var timestampTxt: UILabel!
+    @IBOutlet weak var commentTxt: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
