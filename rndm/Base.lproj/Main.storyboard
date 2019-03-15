@@ -13,7 +13,7 @@
         <!--LoginVC-->
         <scene sceneID="Goh-R5-q9G">
             <objects>
-                <viewController id="n3l-92-ELZ" customClass="LoginVC" customModule="rndm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="n3l-92-ELZ" customClass="LoginVC" customModule="rndm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YcE-fZ-iOr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="createUserTapped:" destination="n3l-92-ELZ" eventType="touchUpInside" id="LpU-7c-FoF"/>
+                                    <segue destination="3NB-87-3wU" kind="show" id="Ygj-5C-gY1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="us0-LT-Cab">
@@ -168,7 +168,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelTapped:" destination="3NB-87-3wU" eventType="touchUpInside" id="DBe-1Z-aMx"/>
+                                    <action selector="cancelTapped:" destination="3NB-87-3wU" eventType="touchUpInside" id="itw-dY-Exc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -311,6 +311,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="RNDM" id="e13-Uv-XhM">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Vtu-1a-vLL">
+                            <connections>
+                                <action selector="logoutTapped:" destination="BYZ-38-t0r" id="EK4-f0-5PK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="addThoughtIcon" id="vVn-Xl-wvL">
                             <connections>
                                 <segue destination="ZLE-G0-4PW" kind="show" id="dnz-S7-VTZ"/>

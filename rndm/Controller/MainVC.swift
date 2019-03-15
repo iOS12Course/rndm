@@ -16,6 +16,8 @@ enum ThoughtCategory : String {
     case popular = "popular"
 }
 
+
+
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //Outlets
@@ -27,6 +29,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private var thoughtsCollectionRef : CollectionReference!
     private var thoughtsListener: ListenerRegistration!
     private var selectedCategory = ThoughtCategory.funny.rawValue
+    private var handle: AuthStateDidChangeListenerHandle?
     
     
     override func viewDidLoad() {
@@ -55,10 +58,29 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         setListener()
     }
     
+    @IBAction func logoutTapped(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signoutError as NSError {
+            debugPrint("Error signing out: \(signoutError)")
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setListener()
+        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user == nil {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+                self.present(loginVC, animated: true, completion: nil)
+            } else {
+              self.setListener()
+            }
+        })
+        
+        
+        
     }
     
     func setListener() {
@@ -95,7 +117,10 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        thoughtsListener.remove()
+        if thoughtsListener != nil {
+             thoughtsListener.remove()
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
