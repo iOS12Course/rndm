@@ -29,7 +29,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private var thoughtsCollectionRef : CollectionReference!
     private var thoughtsListener: ListenerRegistration!
     private var selectedCategory = ThoughtCategory.funny.rawValue
-    private var handle: AuthStateDidChangeListenerHandle!
+    private var handle: AuthStateDidChangeListenerHandle?
     
     
     override func viewDidLoad() {

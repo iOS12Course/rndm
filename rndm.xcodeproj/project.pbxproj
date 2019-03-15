@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B39F4E856343F27AD7133DD /* Pods_rndm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD13EE9049D77C90A364C4C5 /* Pods_rndm.framework */; };
+		F605F978223B4FE6003D68B6 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F977223B4FE6003D68B6 /* KeyboardBoundView.swift */; };
 		F63580B9223753E700CF0B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63580B8223753E700CF0B04 /* AppDelegate.swift */; };
 		F63580BB223753E700CF0B04 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63580BA223753E700CF0B04 /* MainVC.swift */; };
 		F63580BE223753E700CF0B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63580BC223753E700CF0B04 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		2A968D6B3CD67908B101064B /* Pods-rndm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndm.release.xcconfig"; path = "Pods/Target Support Files/Pods-rndm/Pods-rndm.release.xcconfig"; sourceTree = "<group>"; };
 		BD13EE9049D77C90A364C4C5 /* Pods_rndm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rndm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9241A39F93D7C8C9D9A177 /* Pods-rndm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rndm/Pods-rndm.debug.xcconfig"; sourceTree = "<group>"; };
+		F605F977223B4FE6003D68B6 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		F63580B5223753E700CF0B04 /* rndm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rndm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63580B8223753E700CF0B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F63580BA223753E700CF0B04 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		F63580D32238ADB000CF0B04 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F605F977223B4FE6003D68B6 /* KeyboardBoundView.swift */,
 				F63580D42238ADBC00CF0B04 /* Constants.swift */,
 			);
 			path = Utilities;
@@ -279,6 +282,7 @@
 			files = (
 				F63580CD22375E8900CF0B04 /* AddThoughtVC.swift in Sources */,
 				F63580DD223A078D00CF0B04 /* CreateUserVC.swift in Sources */,
+				F605F978223B4FE6003D68B6 /* KeyboardBoundView.swift in Sources */,
 				F63580D72238B34B00CF0B04 /* Thought.swift in Sources */,
 				F63580DB223A05C600CF0B04 /* LoginVC.swift in Sources */,
 				F63580BB223753E700CF0B04 /* MainVC.swift in Sources */,
