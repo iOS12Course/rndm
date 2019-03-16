@@ -19,11 +19,6 @@ enum ThoughtCategory : String {
 
 
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ThoughtDelegate {
-   
-    func thoughtOptionsTapped(thought: Thought) {
-        //This is where we create alert to handle deletion
-        
-    }
     
     
     //Outlets
@@ -81,7 +76,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Thou
                 let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
                 self.present(loginVC, animated: true, completion: nil)
             } else {
-              self.setListener()
+                self.setListener()
             }
         })
         
@@ -124,9 +119,65 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Thou
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if thoughtsListener != nil {
-             thoughtsListener.remove()
+            thoughtsListener.remove()
         }
-       
+        
+    }
+    
+    func thoughtOptionsTapped(thought: Thought) {
+        //This is where we create alert to handle deletion
+        let alert = UIAlertController(title: "Delete", message: "Do you wnat to delete your though?", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .default) { (action) in
+            //Delete the though
+            
+            self.delete(collection: Firestore.firestore().collection(THOUGHTS_REF).document(thought.documentId)
+                .collection(COMMENTS_REF), completion: { (error) in
+                    if let error = error {
+                        debugPrint("Could not delete subcollection: \(error.localizedDescription)")
+                    } else {
+                        Firestore.firestore().collection(THOUGHTS_REF).document(thought.documentId).delete(completion: { (error) in
+                            if let error = error {
+                                debugPrint("Could not delete thought: \(error.localizedDescription)")
+                            } else {
+                                alert.dismiss(animated: true, completion: nil)
+                            }
+                        })
+                    }
+            } )
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func delete(collection: CollectionReference, batchSize: Int = 100, completion: @escaping (Error?) -> ()) {
+        collection.limit(to: batchSize).getDocuments { (docset, error) in
+            guard let docset = docset else {
+                completion(error)
+                return
+            }
+            
+            guard docset.count > 0 else {
+                completion(nil)
+                return
+            }
+            
+            let batch = collection.firestore.batch()
+            docset.documents.forEach { batch.deleteDocument($0.reference) }
+            
+            batch.commit(completion: { (batchError) in
+                if let batchError = batchError  {
+                    completion(batchError)
+                } else {
+                    self.delete(collection: collection, batchSize: batchSize, completion: completion)
+                }
+            })
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
