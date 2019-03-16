@@ -286,15 +286,20 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipsis" translatesAutoresizingMaskIntoConstraints="NO" id="yZf-DH-TGb">
+                                                    <rect key="frame" x="331" y="8" width="30" height="30"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="MBP-Ni-8st" firstAttribute="top" secondItem="eoA-K1-l9K" secondAttribute="bottom" constant="8" id="5sD-1k-yEK"/>
                                                 <constraint firstItem="dAb-aH-kcf" firstAttribute="top" secondItem="tyK-Jz-si9" secondAttribute="topMargin" id="7u7-f7-ATx"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Q4z-mD-lKw" secondAttribute="bottom" constant="0.5" id="A1k-GW-y6z"/>
+                                                <constraint firstAttribute="trailing" secondItem="yZf-DH-TGb" secondAttribute="trailing" constant="14" id="E0S-EK-g1G"/>
                                                 <constraint firstItem="Q4z-mD-lKw" firstAttribute="top" secondItem="MBP-Ni-8st" secondAttribute="bottom" constant="4" id="LIB-Ic-al6"/>
                                                 <constraint firstItem="eoA-K1-l9K" firstAttribute="centerY" secondItem="dAb-aH-kcf" secondAttribute="centerY" id="UjF-B1-DJQ"/>
                                                 <constraint firstItem="Q4z-mD-lKw" firstAttribute="leading" secondItem="tyK-Jz-si9" secondAttribute="leadingMargin" id="kUD-8i-rzE"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="MBP-Ni-8st" secondAttribute="trailing" id="ogp-fr-dw2"/>
+                                                <constraint firstItem="yZf-DH-TGb" firstAttribute="centerY" secondItem="eoA-K1-l9K" secondAttribute="centerY" id="qaU-wR-eP7"/>
                                                 <constraint firstItem="eoA-K1-l9K" firstAttribute="leading" secondItem="dAb-aH-kcf" secondAttribute="trailing" constant="8" id="qd7-79-D0O"/>
                                                 <constraint firstItem="dAb-aH-kcf" firstAttribute="leading" secondItem="tyK-Jz-si9" secondAttribute="leadingMargin" id="vfB-M5-xfP"/>
                                                 <constraint firstItem="MBP-Ni-8st" firstAttribute="leading" secondItem="tyK-Jz-si9" secondAttribute="leadingMargin" id="xvd-Vx-U7d"/>
@@ -304,6 +309,7 @@
                                             <outlet property="commentsNumLbl" destination="nZh-i9-oy3" id="wUh-O4-wEJ"/>
                                             <outlet property="likesImg" destination="8kY-UJ-lNa" id="HaG-7d-Sho"/>
                                             <outlet property="likesNumLbl" destination="kjH-zT-tGh" id="jfZ-gb-yPO"/>
+                                            <outlet property="optionsMenu" destination="yZf-DH-TGb" id="ff4-e0-q2J"/>
                                             <outlet property="thoughtTxtLbl" destination="MBP-Ni-8st" id="nSx-4i-MYb"/>
                                             <outlet property="timestampLbl" destination="eoA-K1-l9K" id="EDn-Uw-Dw2"/>
                                             <outlet property="usernameLbl" destination="dAb-aH-kcf" id="5ZP-oQ-lnh"/>
@@ -465,12 +471,17 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipsis" translatesAutoresizingMaskIntoConstraints="NO" id="5LE-pj-bsa">
+                                                    <rect key="frame" x="334" y="16" width="30" height="30"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rgX-YB-Oc1" firstAttribute="leading" secondItem="jLl-WF-K0F" secondAttribute="leadingMargin" id="1vL-A0-5Lc"/>
                                                 <constraint firstItem="rw3-Og-38g" firstAttribute="top" secondItem="rgX-YB-Oc1" secondAttribute="bottom" constant="13.5" id="228-qb-VaG"/>
                                                 <constraint firstItem="rw3-Og-38g" firstAttribute="trailing" secondItem="jLl-WF-K0F" secondAttribute="trailingMargin" id="8nX-dZ-yFh"/>
                                                 <constraint firstItem="mnb-ZU-Yl9" firstAttribute="leading" secondItem="rgX-YB-Oc1" secondAttribute="trailing" constant="8" id="Cod-M3-eWz"/>
+                                                <constraint firstAttribute="trailing" secondItem="5LE-pj-bsa" secondAttribute="trailing" constant="11" id="LeG-12-a1B"/>
+                                                <constraint firstItem="5LE-pj-bsa" firstAttribute="centerY" secondItem="mnb-ZU-Yl9" secondAttribute="centerY" id="Uxr-lz-2H6"/>
                                                 <constraint firstItem="rw3-Og-38g" firstAttribute="leading" secondItem="jLl-WF-K0F" secondAttribute="leadingMargin" id="YcU-dG-ShL"/>
                                                 <constraint firstItem="rgX-YB-Oc1" firstAttribute="top" secondItem="jLl-WF-K0F" secondAttribute="topMargin" constant="8" id="aFm-e9-szN"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="rw3-Og-38g" secondAttribute="bottom" constant="0.5" id="hQ2-Tf-xg6"/>
@@ -562,6 +573,7 @@
     <resources>
         <image name="addThoughtIcon" width="21" height="24"/>
         <image name="commentIcon" width="26" height="22"/>
+        <image name="ellipsis" width="30" height="30"/>
         <image name="starIconFilled" width="20" height="19"/>
     </resources>
 </document>
