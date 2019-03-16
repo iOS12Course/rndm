@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B39F4E856343F27AD7133DD /* Pods_rndm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD13EE9049D77C90A364C4C5 /* Pods_rndm.framework */; };
 		F605F978223B4FE6003D68B6 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F977223B4FE6003D68B6 /* KeyboardBoundView.swift */; };
+		F605F97A223CC0B8003D68B6 /* UpdateCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F979223CC0B8003D68B6 /* UpdateCommentVC.swift */; };
 		F63580B9223753E700CF0B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63580B8223753E700CF0B04 /* AppDelegate.swift */; };
 		F63580BB223753E700CF0B04 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63580BA223753E700CF0B04 /* MainVC.swift */; };
 		F63580BE223753E700CF0B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63580BC223753E700CF0B04 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		BD13EE9049D77C90A364C4C5 /* Pods_rndm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rndm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9241A39F93D7C8C9D9A177 /* Pods-rndm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rndm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rndm/Pods-rndm.debug.xcconfig"; sourceTree = "<group>"; };
 		F605F977223B4FE6003D68B6 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		F605F979223CC0B8003D68B6 /* UpdateCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommentVC.swift; sourceTree = "<group>"; };
 		F63580B5223753E700CF0B04 /* rndm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rndm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63580B8223753E700CF0B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F63580BA223753E700CF0B04 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				F63580DA223A05C600CF0B04 /* LoginVC.swift */,
 				F63580DC223A078D00CF0B04 /* CreateUserVC.swift */,
 				F63580DE223B3C0100CF0B04 /* CommentsVC.swift */,
+				F605F979223CC0B8003D68B6 /* UpdateCommentVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				F63580DD223A078D00CF0B04 /* CreateUserVC.swift in Sources */,
 				F605F978223B4FE6003D68B6 /* KeyboardBoundView.swift in Sources */,
 				F63580D72238B34B00CF0B04 /* Thought.swift in Sources */,
+				F605F97A223CC0B8003D68B6 /* UpdateCommentVC.swift in Sources */,
 				F63580DB223A05C600CF0B04 /* LoginVC.swift in Sources */,
 				F63580BB223753E700CF0B04 /* MainVC.swift in Sources */,
 				F63580E1223B3ED700CF0B04 /* CommentCell.swift in Sources */,
